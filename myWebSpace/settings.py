@@ -143,11 +143,12 @@ elif os.environ.get('DJANGO_ENV') == 'production':
     AWS_S3_ENDPOINT_URL = f'https://{AWS_S3_REGION_NAME}.digitaloceanspaces.com'
 
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    STATICFILES_STORAGE = "myWebSpace.cdn.backends.StaticRootS3Boto3Storage"
 
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
+    # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    DEFAULT_FILE_STORAGE = "myWebSpace.cdn.backends.MediaRootS3Boto3Storage"
 
 # https://edebonismedia.nyc3.digitaloceanspaces.com
 # Uncomment if you have extra static files and a directory in your GitHub repo.
