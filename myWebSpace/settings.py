@@ -141,6 +141,10 @@ elif os.environ.get('DJANGO_ENV') == 'production':
     AWS_S3_REGION_NAME = os.environ.get("AWS_S3_REGION_NAME")
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.nyc3.digitaloceanspaces.com'
     AWS_S3_ENDPOINT_URL = f'https://{AWS_S3_REGION_NAME}.digitaloceanspaces.com'
+    AWS_LOCATION = os.environ.get("AWS_LOCATION")
+    AWS_S3_OBJECT_PARAMETERS = {
+        'CacheControl': 'max-age=86400',
+    }
 
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
     # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
