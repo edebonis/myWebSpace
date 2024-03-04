@@ -5,4 +5,4 @@ from django.db import models
 
 class Products(models.Model):
     name = models.CharField(max_length=30)
-    photo = models.ImageField(upload_to='media/productPhoto')
+    photo = models.ImageField(upload_to='productPhoto')
