@@ -1,12 +1,12 @@
 from storages.backends.s3boto3 import S3Boto3Storage
-from ..settings import core_settings
+from myWebSpace.settings import STATIC_ROOT, MEDIA_ROOT
 
 
 class StaticRootS3Boto3Storage(S3Boto3Storage):
-    location = core_settings.STATIC_ROOT
+    location = STATIC_ROOT
     bucket_name = 'edebonismedia'
 
 
 class MediaRootS3Boto3Storage(S3Boto3Storage):
-    location = core_settings.MEDIA_ROOT
+    location = MEDIA_ROOT
     bucket_name = 'edebonismedia'
