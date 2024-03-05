@@ -144,6 +144,7 @@ elif os.environ.get('DJANGO_ENV') == 'production':
     AWS_LOCATION = os.environ.get("AWS_LOCATION")
     AWS_S3_SIGNATURE_VERSION = 's3v4'
     AWS_QUERYSTRING_AUTH = False
+    AWS_DEFAULT_ACL = 'public-read'
     AWS_S3_OBJECT_PARAMETERS = {
         'CacheControl': 'max-age=86400',
     }
