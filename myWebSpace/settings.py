@@ -126,7 +126,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+
 if os.environ.get('DJANGO_ENV') == 'local':
+    print("local")
     # Configuración local para el entorno de desarrollo
     STATIC_URL = '/static/'
     STATIC_ROOT = os.path.join(BASE_DIR, "static")
@@ -135,6 +137,7 @@ if os.environ.get('DJANGO_ENV') == 'local':
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 elif os.environ.get('DJANGO_ENV') == 'production':
+    print("production")
     # Configuración para el entorno de producción con DigitalOcean Spaces
     AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
     AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
